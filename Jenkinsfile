@@ -9,7 +9,7 @@ pipeline {
             steps {
                 sh '''
                 python -m venv venv
-                . venv/bin/activate
+                source venv/bin/activate
                 pip install -r requirements.txt
                 '''
             }
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                 bash
-                . venv/bin/activate
+                source venv/bin/activate
                 pytest
                 '''
             }
