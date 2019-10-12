@@ -20,6 +20,7 @@ pipeline {
                 bash
                 source venv/bin/activate
                 pytest --html=reports/report.html -vv
+                pytest --html=reports/report2.html -vv
                 '''
             }
             post {
@@ -29,7 +30,7 @@ pipeline {
                         alwaysLinkToLastBuild: false,
                         keepAll: false,
                         reportDir: 'reports',
-                        reportFiles: 'report.html',
+                        reportFiles: 'report.html, report2.html',
                         reportName: 'Tasks Test Results',
                         reportTitles: 'Tasks Test Results'
                     ])
