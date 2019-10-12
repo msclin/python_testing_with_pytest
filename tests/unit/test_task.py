@@ -23,3 +23,20 @@ def test_replace():
     t_expected = Task('finish book', 'brian', True, 10)
 
     assert t_after == t_expected
+
+
+def test_defaults():
+    """Check .field functionality of namedtuple."""
+    t1 = Task()
+    t2 = Task(None, None, False, None)
+
+    assert t1 == t2
+
+
+def test_member_access():
+    t = Task('buy milk', 'brian')
+
+    actual = (t.summary, t.owner, t.done, t.id)
+    expected = ('buy milk!', 'brian', False, None)
+
+    assert actual == expected
