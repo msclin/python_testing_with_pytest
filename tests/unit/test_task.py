@@ -37,6 +37,6 @@ def test_member_access():
     t = Task('buy milk', 'brian')
 
     actual = (t.summary, t.owner, t.done, t.id)
-    expected = ('buy milk!', 'brian', False, None)
+    expected = ('buy milk', 'brian', False, None)
 
     assert actual == expected
