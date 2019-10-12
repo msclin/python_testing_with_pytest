@@ -2,6 +2,8 @@ from tasks import Task
 
 
 def test_asdict():
+    """_asdict() should return a dictionary."""
+
     t_task = Task('do something', 'okken', True, 21)
     t_dict = t_task._asdict()
     expected = {
@@ -12,3 +14,12 @@ def test_asdict():
     }
 
     assert t_dict == expected
+
+
+def test_replace():
+    """replace() shoudl change passed in fields."""
+    t_before = Task('finish book', 'brian', False)
+    t_after = t_before._replace(id=10, done=True)
+    t_expected = Task('finish book', 'brian', True, 10)
+
+    assert t_after == t_expected
