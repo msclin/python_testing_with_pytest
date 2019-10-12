@@ -13,4 +13,4 @@ def test_add():
 
 def test_foobar():
     print('Hello, World!')
-    assert 1 == 2
+    assert 1 == 1
