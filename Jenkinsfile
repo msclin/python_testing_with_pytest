@@ -32,7 +32,7 @@ pipeline {
                         reportDir: 'reports',
                         reportFiles: 'report.html,report2.html',
                         reportName: 'Tasks Test Results',
-                        reportTitles: 'Tasks Test Results'
+                        reportTitles: 'Tasks 1, Tasks 2'
                     ])
                 }
             }
