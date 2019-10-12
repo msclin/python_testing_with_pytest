@@ -19,8 +19,7 @@ pipeline {
                 sh '''
                 bash
                 source venv/bin/activate
-                pytest --html=reports/report.html
-                pytest --html=reports/report2.html
+                pytest --html=reports/report.html -vv
                 '''
             }
             post {
@@ -33,16 +32,6 @@ pipeline {
                         reportFiles: 'report.html',
                         reportName: 'Tasks Test Results',
                         reportTitles: 'Tasks Test Results'
-                    ])
-
-                    publishHTML([
-                        allowMissing: false,
-                        alwaysLinkToLastBuild: false,
-                        keepAll: false,
-                        reportDir: 'reports',
-                        reportFiles: 'report2.html',
-                        reportName: 'Tasks Test Results 2',
-                        reportTitles: 'Tasks Test Results 2'
                     ])
                 }
             }
