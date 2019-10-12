@@ -1,6 +1,9 @@
+import pytest
+
 from tasks import Task
 
 
+@pytest.mark.tasks
 def test_asdict():
     """_asdict() should return a dictionary."""
 
@@ -16,6 +19,7 @@ def test_asdict():
     assert t_dict == expected
 
 
+@pytest.mark.tasks
 def test_replace():
     """replace() shoudl change passed in fields."""
     t_before = Task('finish book', 'brian', False)
@@ -25,6 +29,7 @@ def test_replace():
     assert t_after == t_expected
 
 
+@pytest.mark.tasks
 def test_defaults():
     """Using no parameters should invoke defaults."""
     t1 = Task()
@@ -33,6 +38,7 @@ def test_defaults():
     assert t1 == t2
 
 
+@pytest.mark.tasks
 def test_member_access():
     """Check .field functionality of namedtuple."""
     t = Task('buy milk', 'brian')
@@ -43,6 +49,7 @@ def test_member_access():
     assert actual == expected
 
 
+@pytest.mark.tasks
 def test_task_equality():
     """Different tasks should not be equal."""
     t1 = Task('sit there', 'brian')
@@ -51,6 +58,7 @@ def test_task_equality():
     assert t1 != t2
 
 
+@pytest.mark.tasks
 def test_dict_equality():
     """Different tasks compared as dicts should not be equal."""
     t1_dict = Task('make sandwich', 'okken')._asdict()

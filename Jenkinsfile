@@ -19,8 +19,8 @@ pipeline {
                 sh '''
                 bash
                 source venv/bin/activate
-                pytest --html=reports/report.html -vv
-                pytest --html=reports/report2.html -vv
+                pytest --html=reports/tasks.html -m tasks -vv
+                pytest --html=reports/exceptions.html -m exceptions -vv
                 '''
             }
             post {
@@ -30,9 +30,9 @@ pipeline {
                         alwaysLinkToLastBuild: false,
                         keepAll: false,
                         reportDir: 'reports',
-                        reportFiles: 'report.html,report2.html',
+                        reportFiles: 'tasks.html,exceptions.html',
                         reportName: 'Tasks Test Results',
-                        reportTitles: 'Tasks 1, Tasks 2'
+                        reportTitles: 'Tasks, Exceptions'
                     ])
                 }
             }
