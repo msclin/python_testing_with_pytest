@@ -7,4 +7,5 @@ We'll add a bunch of tests here in later versions.
 
 def test_add():
     """Placeholder test."""
-    pass
+    print('Verifying that 1 equals 1.')
+    assert 1 == 1
