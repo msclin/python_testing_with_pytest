@@ -19,7 +19,7 @@ pipeline {
                 sh '''
                 bash
                 source venv/bin/activate
-                pytest
+                pytest --html=reports/report.html
                 '''
             }
             post {
