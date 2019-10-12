@@ -30,8 +30,8 @@ pipeline {
                         keepAll: false,
                         reportDir: 'reports',
                         reportFiles: 'report.html',
-                        reportName: 'HTML Report',
-                        reportTitles: 'Login Test Results'
+                        reportName: 'Tasks Test Results',
+                        reportTitles: 'Tasks Test Results'
                     ])
                 }
             }
