@@ -21,6 +21,7 @@ pipeline {
                 source venv/bin/activate
                 pytest --html=reports/tasks.html -m tasks -vv
                 pytest --html=reports/exceptions.html -m exceptions -vv
+                pytest --html=reports/failing.html -m failing -vv
                 '''
             }
             post {
@@ -30,9 +31,9 @@ pipeline {
                         alwaysLinkToLastBuild: false,
                         keepAll: false,
                         reportDir: 'reports',
-                        reportFiles: 'tasks.html,exceptions.html',
+                        reportFiles: 'tasks.html,exceptions.html,failing.html',
                         reportName: 'Tasks Test Results',
-                        reportTitles: 'Tasks, Exceptions'
+                        reportTitles: 'Tasks,Exceptions,Failing'
                     ])
                 }
             }
