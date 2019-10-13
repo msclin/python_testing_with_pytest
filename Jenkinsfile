@@ -21,7 +21,6 @@ pipeline {
                 source venv/bin/activate
                 pytest --html=reports/tasks.html -m tasks -vv
                 pytest --html=reports/exceptions.html -m exceptions -vv
-                pytest --html=reports/failing.html -m failing -vv
                 '''
             }
             post {
