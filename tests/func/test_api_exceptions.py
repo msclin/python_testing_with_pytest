@@ -22,13 +22,16 @@ def test_start_tasks_db_raises():
 
 
 @pytest.mark.exceptions
+@pytest.mark.smoke
 def test_list_raises():
     """list() should raise an exception with wrong type param."""
     with pytest.raises(TypeError):
         tasks.list_tasks(owner=123)
 
 
+@pytest.mark.get
 @pytest.mark.exceptions
+@pytest.mark.smoke
 def test_get_raises():
     """get() should raise an exception with wrong type param."""
     with pytest.raises(TypeError):
